@@ -1,0 +1,630 @@
+openapi: 3.0.3
+info:
+  title: Subscription
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/websites:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  websites:
+                    -
+                      id: 1
+                      name: 'Daily Mail'
+                      url: 'https://dailymail.com'
+                      created_at: '2022-08-04T16:48:48.000000Z'
+                      updated_at: '2022-08-04T16:48:48.000000Z'
+                    -
+                      id: 2
+                      name: "Delilah's Kitchen"
+                      url: 'https://kitchenofdelilah.com'
+                      created_at: '2022-08-04T16:48:49.000000Z'
+                      updated_at: '2022-08-04T16:48:49.000000Z'
+                    -
+                      id: 3
+                      name: 'Everytihng Football'
+                      url: 'https://everythingfootball.blog'
+                      created_at: '2022-08-04T16:48:49.000000Z'
+                      updated_at: '2022-08-04T16:48:49.000000Z'
+                    -
+                      id: 4
+                      name: 'Morning Gossip'
+                      url: 'https://morninggossip.com'
+                      created_at: '2022-08-04T16:48:49.000000Z'
+                      updated_at: '2022-08-04T16:48:49.000000Z'
+                    -
+                      id: 5
+                      name: 'Tech News'
+                      url: 'https://technews.com'
+                      created_at: '2022-08-04T16:48:49.000000Z'
+                      updated_at: '2022-08-04T16:48:49.000000Z'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  websites:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Daily Mail'
+                        url: 'https://dailymail.com'
+                        created_at: '2022-08-04T16:48:48.000000Z'
+                        updated_at: '2022-08-04T16:48:48.000000Z'
+                      -
+                        id: 2
+                        name: "Delilah's Kitchen"
+                        url: 'https://kitchenofdelilah.com'
+                        created_at: '2022-08-04T16:48:49.000000Z'
+                        updated_at: '2022-08-04T16:48:49.000000Z'
+                      -
+                        id: 3
+                        name: 'Everytihng Football'
+                        url: 'https://everythingfootball.blog'
+                        created_at: '2022-08-04T16:48:49.000000Z'
+                        updated_at: '2022-08-04T16:48:49.000000Z'
+                      -
+                        id: 4
+                        name: 'Morning Gossip'
+                        url: 'https://morninggossip.com'
+                        created_at: '2022-08-04T16:48:49.000000Z'
+                        updated_at: '2022-08-04T16:48:49.000000Z'
+                      -
+                        id: 5
+                        name: 'Tech News'
+                        url: 'https://technews.com'
+                        created_at: '2022-08-04T16:48:49.000000Z'
+                        updated_at: '2022-08-04T16:48:49.000000Z'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/websites/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the website.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/subscribers:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  subscribers:
+                    -
+                      id: 1
+                      email: newemail@example.com
+                      user_id: null
+                      created_at: '2022-08-04T17:12:43.000000Z'
+                      updated_at: '2022-08-04T17:12:43.000000Z'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  subscribers:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        email: newemail@example.com
+                        user_id: null
+                        created_at: '2022-08-04T17:12:43.000000Z'
+                        updated_at: '2022-08-04T17:12:43.000000Z'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: id
+                website_id:
+                  type: integer
+                  description: ''
+                  example: 2
+              required:
+                - email
+                - website_id
+      security: []
+  '/api/v1/subscribers/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  subscriber:
+                    id: 1
+                    email: newemail@example.com
+                    user_id: null
+                    created_at: '2022-08-04T17:12:43.000000Z'
+                    updated_at: '2022-08-04T17:12:43.000000Z'
+                  message: 'Subscriber created successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  subscriber:
+                    type: object
+                    example:
+                      id: 1
+                      email: newemail@example.com
+                      user_id: null
+                      created_at: '2022-08-04T17:12:43.000000Z'
+                      updated_at: '2022-08-04T17:12:43.000000Z'
+                  message:
+                    type: string
+                    example: 'Subscriber created successfully'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the subscriber.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/posts:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  posts:
+                    -
+                      id: 1
+                      title: 'Post 1'
+                      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestiae nihil unde reiciendis aperiam expedita similique praesentium illo animi asperiores natus soluta facere, mollitia neque veniam. Quas animi ut labore?'
+                      website_id: 2
+                      user_id: 1
+                      created_at: '2022-08-04T16:40:38.000000Z'
+                      updated_at: '2022-08-04T16:40:38.000000Z'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  posts:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: 'Post 1'
+                        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestiae nihil unde reiciendis aperiam expedita similique praesentium illo animi asperiores natus soluta facere, mollitia neque veniam. Quas animi ut labore?'
+                        website_id: 2
+                        user_id: 1
+                        created_at: '2022-08-04T16:40:38.000000Z'
+                        updated_at: '2022-08-04T16:40:38.000000Z'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the post.'
+                  example: fugiat
+                description:
+                  type: string
+                  description: 'The content of the post.'
+                  example: dolorum
+                website_id:
+                  type: integer
+                  description: 'ID of the website the post belongs to.'
+                  example: 3
+                user_id:
+                  type: integer
+                  description: 'ID of the author of the post.'
+                  example: 6
+              required:
+                - description
+      security: []
+  '/api/v1/posts/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  post:
+                    id: 1
+                    title: 'Post 1'
+                    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestiae nihil unde reiciendis aperiam expedita similique praesentium illo animi asperiores natus soluta facere, mollitia neque veniam. Quas animi ut labore?'
+                    website_id: 2
+                    user_id: 1
+                    created_at: '2022-08-04T16:40:38.000000Z'
+                    updated_at: '2022-08-04T16:40:38.000000Z'
+                    author: null
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  post:
+                    type: object
+                    example:
+                      id: 1
+                      title: 'Post 1'
+                      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestiae nihil unde reiciendis aperiam expedita similique praesentium illo animi asperiores natus soluta facere, mollitia neque veniam. Quas animi ut labore?'
+                      website_id: 2
+                      user_id: 1
+                      created_at: '2022-08-04T16:40:38.000000Z'
+                      updated_at: '2022-08-04T16:40:38.000000Z'
+                      author: null
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the post.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
