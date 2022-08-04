@@ -22,5 +22,11 @@ class DatabaseSeeder extends Seeder
 
         $users = new UserSeeder();
         $users->run();
+
+        $subscribers = new SubscriberSeeder();
+        $subscribers->run();
+
+        $subscriptions = new SubscriptionSeeder();
+        $subscriptions->run();
     }
 }

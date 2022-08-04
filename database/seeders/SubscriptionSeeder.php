@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Subscriber;
+use App\Models\Subscriptions;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SubscriberSeeder extends Seeder
+class SubscriptionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +15,9 @@ class SubscriberSeeder extends Seeder
      */
     public function run()
     {
-        Subscriber::create([
-            'email'=> 'Daily Mail',
-            'user_id' => 1
+        Subscriptions::create([
+            'website_id'=> 1,
+            'subscriber_id' => 1
         ]);
     }
 }
